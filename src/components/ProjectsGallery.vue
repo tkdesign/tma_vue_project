@@ -39,9 +39,14 @@ export default {
           focus: true,
         });
         if (modal.value) {
-          modal.value.show()
+          modal.value._element.addEventListener('hidden.bs.modal', this.handleModalClose);
+          modal.value.show();
         }
       }
+    },
+    handleModalClose() {
+      this.$refs.lightBoxModalWindow.title = '';
+      this.$refs.lightBoxModalWindow.image = '';
     },
   },
   components: {
@@ -71,6 +76,7 @@ export default {
 
 .card-image-top img {
   object-fit: cover;
+  cursor: pointer;
 }
 
 .card-title {
