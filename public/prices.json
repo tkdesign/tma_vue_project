@@ -1,0 +1,26 @@
+{
+  "priceGroups": [
+    {"id": 1, "title": "Architectural Services", "desc": "Description for Architectural Services", "prices": [
+      {"title": "Architektonická štúdia", "price": "20€/m²", "duration": "8 týždňov", "desc": "Pre začiatok projekčných prác je potrebné priestor zamerať"},
+      {"title": "Projekty pre územné rozhodnutie a stavebné povolenie", "price": "od 40€/m²", "duration": "8 týždňov", "desc": "Cena platí pre priestory od 100m²"},
+      {"title": "Realizačný projekt", "price": "od 70€/m²", "duration": "16 týždňov", "desc": "Cena platí pre priestory od 100m²"},
+      {"title": "Realizačné detaily", "price": "od 30€/m²", "duration": "4 týždne", "desc": "Výkresy nábytku na mieru a podrobná špecifikácia použitých prvkov s cenovou ponukou realizácie na kľúč"},
+      {"title": "Autorský dozor", "price": "40€/hod", "duration": "12 týždňov", "desc": "Autorský dozor zahŕňa návštevy stavby počas realizácie jedenkrát za týždeň"}
+    ]
+    },
+    {"id": 2, "title": "Interiér", "desc": "Robíme interiéry všetkých druhov, veľkostí a rozpočtov. Naše riešenia sú jednoduché a funkčné. Môžete si u nás objednať koncept, plánovacie riešenie, projekt a pracovnú dokumentáciu pre stavebné práce.", "prices": [
+      {"title": "Zameranie priestoru", "price": "10€/m²", "duration": "2 týždne", "desc": "Pre začiatok projekčných prác je potrebné priestor zamerať"},
+      {"title": "Dispozičné riešenie", "price": "20€/m²", "duration": "4 týždne", "desc": "Cena platí pre priestory od 100m²"},
+      {"title": "Návrh interiéru", "price": "od 50€/m²", "duration": "12 týždňov", "desc": "Cena platí pre priestory od 100m²"},
+      {"title": "Projekt pre cenovú ponuku", "price": "od 60€/m²", "duration": "12 týždňov", "desc": "Výkresy nábytku na mieru a podrobná špecifikácia použitých prvkov s cenovou ponukou realizácie na kľúč"},
+      {"title": "Autorský dozor", "price": "40€/hod", "duration": "12 týždňov", "desc": "Autorský dozor zahŕňa návštevy stavby počas realizácie jedenkrát za týždeň"}
+    ]
+    },
+    {"id": 3, "title": "Ostatné služby", "desc": "Doplnkové služby, ktoré nie sú zahrnuté v cene projektových prác, poskytujeme za príplatok.", "prices": [
+      {"title": "Konzultačné služby", "price": "40€/hod", "duration": "2 týždne", "desc": "Pri projektoch s nepredvídateľnou časovou náročnosťou naše služby účtujeme na základe odpracovaných hodín"},
+      {"title": "Cestovné náklady", "price": "40€/hour + 0.5€/km", "duration": "4 týždne", "desc": "Cena za jeden výjazd obsahuje cestovné náklady vrátane času cesty na miesto stavby a nazad."},
+      {"title": "Návrh interiéru", "price": "od 50€/m²", "duration": "12 týždňov", "desc": "Cena platí pre priestory od 100m²."}
+    ]
+    }
+  ]
+}

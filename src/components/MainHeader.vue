@@ -1,16 +1,20 @@
 <template>
   <header class="container-fluid navbar navbar-expand-sm navbar-top">
     <nav class="container-fluid flex-wrap py-3 px-5">
-      <BNavbarBrand href="/" class="mb-0">TM Architektura</BNavbarBrand>
-      <BNavbarToggle target="nav-collapse" class="btn-sm" />
-      <BCollapse id="nav-collapse" class="justify-content-end" is-nav>
-        <BNavbarNav right>
-          <BNavItem href="/" active>Domov</BNavItem>
-          <BNavItem href="/projects">Projekty</BNavItem>
-          <BNavItem href="/prices">Cenník</BNavItem>
-          <BNavItem href="/contacts">Kontakt</BNavItem>
-        </BNavbarNav>
-      </BCollapse>
+      <a class="navbar-brand mb-0" href="/">TM Architektura</a>
+      <button class="navbar-toggler btn-sm" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarCollapseContainer" aria-controls="navbarCollapseContainer"
+              aria-expanded="false" aria-label="Toggle menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarCollapseContainer">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" href="/">Domov</a></li>
+          <li class="nav-item"><a class="nav-link" href="/projects">Projekty</a></li>
+          <li class="nav-item"><a class="nav-link" href="/prices">Cenník</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contacts">Kontakt</a></li>
+        </ul>
+      </div>
     </nav>
   </header>
 </template>
