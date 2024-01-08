@@ -62,6 +62,11 @@ export default {
       this.projectsStore.init();
     }
   },
+  mounted() {
+    if (this.categoryId) {
+      this.$refs.categorySelector.value = this.categoryId;
+    }
+  },
   methods: {
     changeCategory(event) {
       const cid = event.target.value;
