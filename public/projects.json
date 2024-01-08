@@ -1,0 +1,167 @@
+{
+  "projects":
+  [
+    {
+      "id": 1,
+      "title": "Byt",
+      "alias": "flat",
+      "intro_text": "Dizajn interiéru bytu",
+      "full_text": "",
+      "image": "flat.jpg",
+      "category_id": 1
+    },
+    {
+      "id": 2,
+      "title": "Kancelária",
+      "alias": "office",
+      "intro_text": "Dizajn interiéru kancelárie",
+      "full_text": "",
+      "image": "office.jpg",
+      "category_id": 2
+    },
+    {
+      "id": 3,
+      "title": "Autosalón",
+      "alias": "autosalon",
+      "intro_text": "Dizajn interiéru autosalóna",
+      "full_text": "",
+      "image": "salon.jpg",
+      "category_id": 3
+    },
+    {
+      "id": 4,
+      "title": "Kancelária",
+      "alias": "office_2",
+      "intro_text": "Dizajn interiéru kancelárie",
+      "full_text": "",
+      "image": "office2.jpg",
+      "category_id": 3
+    },
+    {
+      "id": 5,
+      "title": "Výstava",
+      "alias": "exhibition",
+      "intro_text": "Projekt interiéru výstavy",
+      "full_text": "",
+      "image": "museum2.jpg",
+      "category_id": 4
+    },
+    {
+      "id": 6,
+      "title": "Byt",
+      "alias": "flat_2",
+      "intro_text": "Dizajn interiéru bytu",
+      "full_text": "",
+      "image": "flat13a.jpg",
+      "category_id": 1
+    },
+    {
+      "id": 7,
+      "title": "Byt",
+      "alias": "flat_3",
+      "intro_text": "Dizajn interiéru bytu",
+      "full_text": "",
+      "image": "flat12b.jpg",
+      "category_id": 1
+    },
+    {
+      "id": 8,
+      "title": "Nahrávacie štúdio",
+      "alias": "recording_studio",
+      "intro_text": "Projekt interiéru nahrávacieho štúdia",
+      "full_text": "",
+      "image": "sstudio.jpg",
+      "category_id": 3
+    },
+    {
+      "id": 9,
+      "title": "Byt",
+      "alias": "flat_4",
+      "intro_text": "Dizajn interiéru bytu",
+      "full_text": "",
+      "image": "flat11b.jpg",
+      "category_id": 1
+    },
+    {
+      "id": 10,
+      "title": "Byt",
+      "alias": "flat_5",
+      "intro_text": "Dizajn interiéru bytu",
+      "full_text": "",
+      "image": "flat9a.jpg",
+      "category_id": 1
+    },
+    {
+      "id": 11,
+      "title": "Rodinný dom",
+      "alias": "house",
+      "intro_text": "Dizajn interiéru rodinného domu",
+      "full_text": "",
+      "image": "townhouse.jpg",
+      "category_id": 2
+    },
+    {
+      "id": 12,
+      "title": "Byt",
+      "alias": "flat_5",
+      "intro_text": "Dizajn interiéru bytu",
+      "full_text": "",
+      "image": "flat4.jpg",
+      "category_id": 1
+    },
+    {
+      "id": 13,
+      "title": "Byt",
+      "alias": "flat_6",
+      "intro_text": "Dizajn interiéru bytu",
+      "full_text": "",
+      "image": "flat3.jpg",
+      "category_id": 1
+    },
+    {
+      "id": 14,
+      "title": "Byt",
+      "alias": "flat_7",
+      "intro_text": "Dizajn interiéru bytu",
+      "full_text": "",
+      "image": "flat2.jpg",
+      "category_id": 1
+    },
+    {
+      "id": 15,
+      "title": "Byt",
+      "alias": "flat_8",
+      "intro_text": "Dizajn interiéru bytu",
+      "full_text": "",
+      "image": "flat5.jpg",
+      "category_id": 1
+    },
+    {
+      "id": 16,
+      "title": "Byt",
+      "alias": "flat_9",
+      "intro_text": "Dizajn interiéru bytu",
+      "full_text": "",
+      "image": "flat6.jpg",
+      "category_id": 1
+    },
+    {
+      "id": 17,
+      "title": "Byt",
+      "alias": "flat_10",
+      "intro_text": "Dizajn interiéru bytu",
+      "full_text": "",
+      "image": "flat7.jpg",
+      "category_id": 1
+    },
+    {
+      "id": 18,
+      "title": "Byt",
+      "alias": "flat_11",
+      "intro_text": "Dizajn interiéru bytu",
+      "full_text": "",
+      "image": "flat8.jpg",
+      "category_id": 1
+    }
+  ]
+}

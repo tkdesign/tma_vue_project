@@ -1,0 +1,29 @@
+{
+  "categories":
+  [
+    {
+      "id": 1,
+      "title": "Byty",
+      "alias": "flats",
+      "description": "Moderné byty, kde sa spájajú komfort a inovácie. Naša architektonická vízia prináša útulné a funkčné priestory pre každodenný život."
+    },
+    {
+      "id": 2,
+      "title": "Doma",
+      "alias": "houses",
+      "description": "Domov je viac než len steny - je to miesto, kde sa rodina stretáva a život ožíva. Navrhujeme domy, ktoré spájajú eleganciu s praktickým využitím."
+    },
+    {
+      "id": 3,
+      "title": "Kancelárie",
+      "alias": "offices",
+      "description": "Inovatívne pracovné prostredie je kľúčom k úspešnému podnikaniu. Naše kancelárske projekty sú zamerané na efektivitu, pohodlie a moderný dizajn."
+    },
+    {
+      "id": 4,
+      "title": "Výstavy",
+      "alias": "exhibitions",
+      "description": "Výstavné priestory, kde sa umenie stretáva s architektúrou. Navrhujeme inšpiratívne miesta pre prezentácie a spoločenské podujatia, kde každý detail hrá svoju úlohu."
+    }
+  ]
+}

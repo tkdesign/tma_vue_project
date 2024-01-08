@@ -4,17 +4,116 @@
       <img
           class="w-100 h-100"
           :src="'/img/preview/' + project.image"
-          :data-src="'/img/details/' + project.image"
           :alt="project.intro_text"
+          @click="showLightBox(project.intro_text, project.image)"
       />
     </div>
     <h5 class="card-title text-muted">{{ project.title }}</h5>
     <p class="card-text text-muted">{{ project.intro_text }}</p>
   </div>
+  <LightBoxForProjectGallery ref="lightBoxModalWindow" />
 </template>
 <script>
+import {ref} from "vue";
+import {Modal} from "bootstrap";
+import LightBoxForProjectGallery from "@/components/LightBoxForProjectGallery.vue";
+
 export default {
+  props: {
+    projects: {
+      type: Array,
+      required: true,
+      default: () => [],
+    },
+  },
+  mounted() {
+    // this.initializeLightBox();
+  },
+  methods: {
+    showLightBox(title, image) {
+      this.$refs.lightBoxModalWindow.title = title;
+      this.$refs.lightBoxModalWindow.image = image;
+      let modal = ref(null);
+      const modalElement = document.getElementById('LightBox');
+      if(modalElement) {
+        modal.value = new Modal(modalElement, {
+          keyboard: true,
+          backdrop: true,
+          focus: true,
+        });
+        if (modal.value) {
+          modal.value.show()
+        }
+      }
+    },
+/*
+    initializeLightBox() {
+      let modal = ref(null);
+      const modalElement = document.getElementById('LightBox');
+      if(modalElement) {
+        modal.value = new Modal(modalElement, {
+          keyboard: true,
+          backdrop: true,
+          focus: true,
+        });
+        if (modal.value) {
+          modal.value._element.addEventListener('hidden.bs.modal', () => {
+            const lbBody = modal.value._element.querySelector('.modal-body .container-fluid');
+            if(lbBody) {
+              try {
+                const lbHeader = modal.value._element.querySelector('.modal-header h1');
+                if(lbHeader){
+                  lbHeader.innerText="";
+                }
+                lbBody.innerHTML="";
+              }
+              catch (err) {
+                console.log('LightBox error:' + err);
+              }
+            }
+          });
+        }
+      }
+    },
+*/
+  },
+  components: {
+    LightBoxForProjectGallery,
+  },
 }
 </script>
 <style scoped>
+.card {
+  padding: .75rem;
+  margin-bottom: 2rem;
+  border: 0;
+  min-width: 280px;
+  flex-basis: 32.6%;
+  //flex-grow: 1;
+}
+@media screen and (max-width: 750px) {
+  .card {
+    margin: 0 auto 2rem;
+    flex-basis: 100%;
+  }
+}
+
+.card-image-top {
+  height: 280px;
+}
+
+.card-image-top img {
+  object-fit: cover;
+}
+
+.card-title {
+  margin-top: .25rem;
+  margin-bottom: .25rem;
+  min-height: 1.5rem;
+}
+
+.card-text {
+  font-size: .85rem;
+  min-height: .85rem;
+}
 </style>

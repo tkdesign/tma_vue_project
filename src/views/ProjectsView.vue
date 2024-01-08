@@ -8,7 +8,7 @@
     <section class="p-5">
       <div class="container-fluid" id="cardsContainer">
         <div class="row">
-          <ProjectsGallery />
+          <ProjectsGallery :projects="filteredProjects" />
         </div>
       </div>
     </section>
@@ -19,47 +19,31 @@
 import SecondaryHeader from '@/components/SecondaryHeader.vue'
 import ProjectsGallery from '@/components/ProjectsGallery.vue';
 import SecondaryFooter from "@/components/SecondaryFooter.vue";
+import { useProjectsStore } from "@/stores/projectsStore";
 export default {
   data() {
+    const projectsStore = useProjectsStore();
     return {
-      projects: [],
-      currentPage: 1,
-      isNextPage: true,
+      projectsStore,
       lightBox: null,
     };
   },
-  created() {
-    axios.get('/api/projects?page=' + this.currentPage).then(response => {
-      this.projects = response.data;
-      this.isNextPage = response.data.length > 0;
-    }).catch(error => {
-      console.error('Error loading projects', error);
-    });
-  },
-  mounted() {
-    this.initializeLightBox();
-  },
-  methods: {
-    initializeLightBox() {
-      this.lightBox = new bootstrap.Modal("#LightBox");
-      if (this.lightBox) {
-        this.lightBox._element.addEventListener('hidden.bs.modal', () => {
-          const lbBody = this.lightBox._element.querySelector('.modal-body .container-fluid');
-          if(lbBody) {
-            try {
-              const lbHeader = this.lightBox._element.querySelector('.modal-header h1');
-              if(lbHeader){
-                lbHeader.innerText="";
-              }
-              lbBody.innerHTML="";
-            }
-            catch (err) {
-              console.log('LightBox error:' + err);
-            }
-          }
-        });
-      }
+  props: {
+    categoryId: {
+      type: String,
+      default: null,
     },
+  },
+  computed: {
+    filteredProjects() {
+      const categoryId = this.categoryId;
+      return categoryId ? this.projectsStore.getProjectsByCategory(categoryId) : this.projectsStore.projects;
+    },
+  },
+  created() {
+    if (this.projectsStore.projects.length === 0) {
+      this.projectsStore.init();
+    }
   },
   components: {
     SecondaryHeader,
@@ -69,4 +53,5 @@ export default {
 }
 </script>
 <style>
+
 </style>

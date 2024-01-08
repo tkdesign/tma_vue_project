@@ -60,7 +60,6 @@
 <script>
 import SecondaryHeader from '@/components/SecondaryHeader.vue';
 import SecondaryFooter from '@/components/SecondaryFooter.vue';
-// import * as bootstrap from 'bootstrap';
 export default {
 components: {
   SecondaryHeader,
@@ -105,10 +104,6 @@ methods: {
   },
   GDPROff() {
     this.GDPRChecked = false;
-  },
-  GDPRModalWindowShow() {
-    // const myModal = new bootstrap.Modal(document.getElementById('GDPRModalWnd'));
-    // myModal.show();
   },
 },
 };
