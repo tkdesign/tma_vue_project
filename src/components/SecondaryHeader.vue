@@ -28,41 +28,4 @@ export default {
 }
 </script>
 <style scoped>
-.navbar-top .navbar-brand {
-  margin-bottom: 0;
-  color: #000 !important;
-  font-size: 1.75rem !important;
-  font-weight: 400 !important;
-}
-
-.navbar-top .nav-link {
-  padding: .25rem 0;
-  font-weight: 700;
-  background-color: transparent;
-  border-bottom: .25rem solid transparent;
-  mix-blend-mode: difference;
-  color: #000 !important;
-}
-
-.navbar-top .nav-link:hover,
-.navbar-top .nav-link:focus {
-  border-bottom-color: #999 !important;
-}
-
-.nanavbarv-top .nav-link+.nav-link {
-  margin-left: 1rem;
-}
-
-.navbar-top .nav-link.active {
-  text-shadow: none !important;
-  mix-blend-mode: difference;
-  color: #333 !important;
-  border-bottom-color: #333;
-}
-
-.navbar-top {
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
 </style>
