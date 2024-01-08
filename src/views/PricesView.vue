@@ -14,11 +14,11 @@
         <div class="accordion-item" v-for="(group, index) in priceGroups" :key="index">
           <h2 class="accordion-header" :id="'heading' + index">
             <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                    :data-bs-target="'#collapse' + index" aria-expanded="true" :aria-controls="'collapse' + index">
+                    :data-bs-target="'#collapse' + index" aria-expanded="true" :aria-controls="'collapse' + index" @click="setActiveTab(index)">
               {{ group.title }}
             </button>
           </h2>
-          <div :id="'collapse' + index" :class="['accordion-collapse', 'collapse', { 'show': index === 0 }]"
+          <div :id="'collapse' + index" :class="['accordion-collapse', 'collapse', { 'show': index === activeTab }]"
                :aria-labelledby="'heading' + index" data-bs-parent="#pricesAccordion">
             <div class="accordion-body">
               {{ group.desc }}
@@ -51,10 +51,13 @@
 import SecondaryHeader from '@/components/SecondaryHeader.vue';
 import SecondaryFooter from '@/components/SecondaryFooter.vue';
 import axios from 'axios';
+import { usePriceGroupsStore} from "@/stores/priceGroupsStore.js";
 
 export default {
   data() {
+    const priceGroupsStorage = usePriceGroupsStore();
     return {
+      priceGroupsStorage,
       dataLoaded: false,
       priceGroups: [],
     };
@@ -63,7 +66,7 @@ export default {
     axios.get('/prices.json').then(response => {
       this.priceGroups = response.data.priceGroups;
       this.dataLoaded = true;
-      console.log(this.priceGroups);
+
     }).catch(error => {
       console.error('Nie je možné načítať údaje.', error);
     });
@@ -71,6 +74,16 @@ export default {
   components: {
     SecondaryHeader,
     SecondaryFooter,
+  },
+  computed: {
+    activeTab() {
+      return this.priceGroupsStorage.activeGroup || 0;
+    },
+  },
+  methods: {
+    setActiveTab(index) {
+      this.priceGroupsStorage.setActiveGroup(index);
+    },
   },
 }
 </script>

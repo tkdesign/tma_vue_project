@@ -22,7 +22,7 @@
 export default {
 }
 </script>
-<style scoped>
+<style>
 .navbar-top {
   position: absolute;
   top: 0;
