@@ -19,33 +19,23 @@ export const useProjectsStore  = defineStore('projectsStore',
         },
         actions: {
             fetchCategories() {
-                const data = {
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                };
-                axios.get('/categories.json', data).then(response => {
+                axios.get('/categories.json').then(response => {
                     this.$patch({
                         categories: response.data.categories,
                     });
                     console.log(this.categories);
                 }).catch(error => {
-                    console.error('Error loading data', error);
+                    console.error('Nie je možné načítať údaje.', error);
                 });
             },
             fetchProjects() {
-                const data = {
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                };
-                axios.get('/projects.json', data).then(response => {
+                axios.get('/projects.json').then(response => {
                     this.$patch({
                         projects: response.data.projects,
                     });
                     console.log(this.projects);
                 }).catch(error => {
-                    console.error('Error loading data', error);
+                    console.error('Nie je možné načítať údaje.', error);
                 });
             },
             init() {

@@ -60,17 +60,12 @@ export default {
     };
   },
   created() {
-    const data = {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    };
-    axios.get('/prices.json', data).then(response => {
+    axios.get('/prices.json').then(response => {
       this.priceGroups = response.data.priceGroups;
       this.dataLoaded = true;
       console.log(this.priceGroups);
     }).catch(error => {
-      console.error('Error loading data', error);
+      console.error('Nie je možné načítať údaje.', error);
     });
   },
   components: {
