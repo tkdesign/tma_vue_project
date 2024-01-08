@@ -9,14 +9,16 @@
       <div class="d-inline-block">
         <select @change="changeCategory" class="form-select" ref="categorySelector">
           <option value="">Všetky projekty</option>
-          <option v-for="category in projectsStore.categories" :key="category.id" :value="category.id" :selected="category.id === categoryId">{{ category.title }}</option>
+          <option v-for="category in projectsStore.categories" :key="category.id" :value="category.id"
+                  :selected="category.id === categoryId">{{ category.title }}
+          </option>
         </select>
       </div>
     </section>
     <section class="p-5">
       <div class="container-fluid" id="cardsContainer">
         <div class="row">
-          <ProjectsGallery :projects="filteredProjects" />
+          <ProjectsGallery :projects="filteredProjects"/>
         </div>
       </div>
     </section>
@@ -27,7 +29,8 @@
 import SecondaryHeader from '@/components/SecondaryHeader.vue'
 import ProjectsGallery from '@/components/ProjectsGallery.vue';
 import SecondaryFooter from "@/components/SecondaryFooter.vue";
-import { useProjectsStore } from "@/stores/projectsStore";
+import {useProjectsStore} from "@/stores/projectsStore";
+
 export default {
   data() {
     const projectsStore = useProjectsStore();
@@ -71,9 +74,9 @@ export default {
     changeCategory(event) {
       const cid = event.target.value;
       if (cid) {
-        this.$router.push({ path: cid ? `/projects/${cid}` : '/projects' });
+        this.$router.push({path: cid ? `/projects/${cid}` : '/projects'});
       } else {
-        this.$router.push({ path: '/projects' });
+        this.$router.push({path: '/projects'});
       }
     },
   },
@@ -85,5 +88,4 @@ export default {
 }
 </script>
 <style>
-
 </style>

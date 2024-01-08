@@ -19,8 +19,7 @@
   </header>
 </template>
 <script>
-export default {
-}
+export default {}
 </script>
 <style>
 .navbar-top {
@@ -55,7 +54,7 @@ export default {
   border-bottom-color: rgba(0, 0, 0, .6) !important;
 }
 
-.nanavbarv-top .nav-link+.nav-link {
+.nanavbarv-top .nav-link + .nav-link {
   margin-left: 1rem;
 }
 

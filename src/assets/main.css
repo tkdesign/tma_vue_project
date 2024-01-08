@@ -1,10 +1,10 @@
 body {
-  --bs-body-font-family: 'Noto Sans', sans-serif;
-  margin: 0;
+    --bs-body-font-family: 'Noto Sans', sans-serif;
+    margin: 0;
 }
 
 a,
 a:focus,
 a:hover {
-  color: rgba(22, 22, 22, 1.00);
+    color: rgba(22, 22, 22, 1.00);
 }

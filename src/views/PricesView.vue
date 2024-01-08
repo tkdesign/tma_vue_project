@@ -14,7 +14,8 @@
         <div class="accordion-item" v-for="(group, index) in priceGroups" :key="index">
           <h2 class="accordion-header" :id="'heading' + index">
             <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                    :data-bs-target="'#collapse' + index" aria-expanded="true" :aria-controls="'collapse' + index" @click="setActiveTab(index)">
+                    :data-bs-target="'#collapse' + index" aria-expanded="true" :aria-controls="'collapse' + index"
+                    @click="setActiveTab(index)">
               {{ group.title }}
             </button>
           </h2>
@@ -51,7 +52,7 @@
 import SecondaryHeader from '@/components/SecondaryHeader.vue';
 import SecondaryFooter from '@/components/SecondaryFooter.vue';
 import axios from 'axios';
-import { usePriceGroupsStore} from "@/stores/priceGroupsStore.js";
+import {usePriceGroupsStore} from "@/stores/priceGroupsStore.js";
 
 export default {
   data() {

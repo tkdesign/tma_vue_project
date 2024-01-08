@@ -1,8 +1,9 @@
 <template>
   <div class="site-wrapper w-100 h-100">
     <div class="site-wrapper-inner w-100 h-100 m-0 p-0">
-      <MainHeader />
-      <div id="presentationCarousel" class="carousel carousel-dark slide carousel-fade w-100 h-100" data-bs-ride="carousel">
+      <MainHeader/>
+      <div id="presentationCarousel" class="carousel carousel-dark slide carousel-fade w-100 h-100"
+           data-bs-ride="carousel">
         <div class="carousel-inner h-100">
           <div class="carousel-item active w-100 h-100">
             <div class="w-100 h-100 slide-item" style="background-image: url('/img/covers/covertrub2.jpg');">
@@ -39,6 +40,7 @@
 </template>
 <script>
 import MainHeader from '@/components/MainHeader.vue'
+
 export default {
   components: {
     MainHeader,
@@ -88,6 +90,7 @@ a:hover {
   background-attachment: fixed;
   background-position: center;
 }
+
 .carousel-inner {
   height: 100%;
 }

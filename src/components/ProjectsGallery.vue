@@ -11,7 +11,7 @@
     <h5 class="card-title text-muted">{{ project.title }}</h5>
     <p class="card-text text-muted">{{ project.intro_text }}</p>
   </div>
-  <LightBoxForProjectGallery ref="lightBoxModalWindow" />
+  <LightBoxForProjectGallery ref="lightBoxModalWindow"/>
 </template>
 <script>
 import {ref} from "vue";
@@ -26,16 +26,13 @@ export default {
       default: () => [],
     },
   },
-  mounted() {
-    // this.initializeLightBox();
-  },
   methods: {
     showLightBox(title, image) {
       this.$refs.lightBoxModalWindow.title = title;
       this.$refs.lightBoxModalWindow.image = image;
       let modal = ref(null);
       const modalElement = document.getElementById('LightBox');
-      if(modalElement) {
+      if (modalElement) {
         modal.value = new Modal(modalElement, {
           keyboard: true,
           backdrop: true,
@@ -46,36 +43,6 @@ export default {
         }
       }
     },
-/*
-    initializeLightBox() {
-      let modal = ref(null);
-      const modalElement = document.getElementById('LightBox');
-      if(modalElement) {
-        modal.value = new Modal(modalElement, {
-          keyboard: true,
-          backdrop: true,
-          focus: true,
-        });
-        if (modal.value) {
-          modal.value._element.addEventListener('hidden.bs.modal', () => {
-            const lbBody = modal.value._element.querySelector('.modal-body .container-fluid');
-            if(lbBody) {
-              try {
-                const lbHeader = modal.value._element.querySelector('.modal-header h1');
-                if(lbHeader){
-                  lbHeader.innerText="";
-                }
-                lbBody.innerHTML="";
-              }
-              catch (err) {
-                console.log('LightBox error:' + err);
-              }
-            }
-          });
-        }
-      }
-    },
-*/
   },
   components: {
     LightBoxForProjectGallery,
@@ -89,8 +56,8 @@ export default {
   border: 0;
   min-width: 280px;
   flex-basis: 32.6%;
-  //flex-grow: 1;
 }
+
 @media screen and (max-width: 750px) {
   .card {
     margin: 0 auto 2rem;

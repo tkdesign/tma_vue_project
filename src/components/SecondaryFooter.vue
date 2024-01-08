@@ -4,9 +4,11 @@
       <p class="pe-4 mb-0 text-muted"><strong>TM Architektura,</strong> {{ currentYear }}</p>
       <ul class="navbar-nav flex-column justify-content-end border-start ps-3">
         <li class="nav-item"><a class="nav-link" href="/">Domov</a></li>
-        <li class="nav-item"><a :class="['nav-link', { 'active': isActive('/projects') }]" href="/projects">Projekty</a></li>
-        <li class="nav-item"><a :class="['nav-link', { 'active': isActive('/prices') }]"  href="/prices">Cenník</a></li>
-        <li class="nav-item"><a :class="['nav-link', { 'active': isActive('/contacts') }]"  href="/contacts">Kontakt</a></li>
+        <li class="nav-item"><a :class="['nav-link', { 'active': isActive('/projects') }]" href="/projects">Projekty</a>
+        </li>
+        <li class="nav-item"><a :class="['nav-link', { 'active': isActive('/prices') }]" href="/prices">Cenník</a></li>
+        <li class="nav-item"><a :class="['nav-link', { 'active': isActive('/contacts') }]" href="/contacts">Kontakt</a>
+        </li>
       </ul>
     </div>
   </footer>
@@ -22,17 +24,11 @@ export default {
     };
   },
   methods: {
-    scrollToTop() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
-      });
-    },
     isActive(path) {
       return this.currentPage === path;
     },
   },
 }
 </script>
-<style scoped>
+<style>
 </style>
