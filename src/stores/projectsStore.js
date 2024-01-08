@@ -23,7 +23,6 @@ export const useProjectsStore  = defineStore('projectsStore',
                     this.$patch({
                         categories: response.data.categories,
                     });
-                    console.log(this.categories);
                 }).catch(error => {
                     console.error('Nie je možné načítať údaje.', error);
                 });
@@ -33,7 +32,6 @@ export const useProjectsStore  = defineStore('projectsStore',
                     this.$patch({
                         projects: response.data.projects,
                     });
-                    console.log(this.projects);
                 }).catch(error => {
                     console.error('Nie je možné načítať údaje.', error);
                 });
