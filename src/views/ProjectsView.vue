@@ -36,7 +36,6 @@ export default {
     const projectsStore = useProjectsStore();
     return {
       projectsStore,
-      lightBox: null,
     };
   },
   props: {
@@ -68,6 +67,23 @@ export default {
   mounted() {
     if (this.categoryId) {
       this.$refs.categorySelector.value = this.categoryId;
+      const category = this.projectsStore.getCategoryById(this.categoryId);
+      if (category?.title) {
+        document.title = `Projecty - ${category.title} - TM Architektura`;
+      }
+    } else {
+      document.title = `Projekry - TM Architektura`;
+    }
+  },
+  beforeUpdate() {
+    if (this.categoryId) {
+      this.$refs.categorySelector.value = this.categoryId;
+      const category = this.projectsStore.getCategoryById(this.categoryId);
+      if (category?.title) {
+        document.title = `Projecty - ${category.title} - TM Architektura`;
+      }
+    } else {
+      document.title = `Projekry - TM Architektura`;
     }
   },
   methods: {

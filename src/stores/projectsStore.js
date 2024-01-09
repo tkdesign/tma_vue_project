@@ -14,9 +14,10 @@ export const useProjectsStore = defineStore('projectsStore',
                 return state.projects.find((project) => project.id === id);
             },
             getProjectsByCategory: (state) => (categoryId) => {
-                return state.projects.filter((project) =>
-                    project.category_id === parseInt(categoryId)
-                );
+                return state.projects.filter((project) => project.category_id === parseInt(categoryId));
+            },
+            getCategoryById: (state) => (id) => {
+                return state.categories.find((category) => category.id === parseInt(id));
             },
         },
         actions: {

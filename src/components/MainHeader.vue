@@ -1,7 +1,7 @@
 <template>
   <header class="container-fluid navbar navbar-expand-sm navbar-top">
     <nav class="container-fluid flex-wrap py-3 px-5">
-      <a class="navbar-brand mb-0" href="/">TM Architektura</a>
+      <RouterLink to="/" class="navbar-brand mb-0">TM Architektura</RouterLink>
       <button class="navbar-toggler btn-sm" type="button" data-bs-toggle="collapse"
               data-bs-target="#navbarCollapseContainer" aria-controls="navbarCollapseContainer"
               aria-expanded="false" aria-label="Toggle menu">
@@ -9,10 +9,10 @@
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarCollapseContainer">
         <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link active" href="/">Domov</a></li>
-          <li class="nav-item"><a class="nav-link" href="/projects">Projekty</a></li>
-          <li class="nav-item"><a class="nav-link" href="/prices">Cenník</a></li>
-          <li class="nav-item"><a class="nav-link" href="/contacts">Kontakt</a></li>
+          <li class="nav-item"><RouterLink to="/" class="nav-link active">Domov</RouterLink></li>
+          <li class="nav-item"><RouterLink to="/projects" class="nav-link">Projekty</RouterLink></li>
+          <li class="nav-item"><RouterLink to="/prices" class="nav-link">Cenník</RouterLink></li>
+          <li class="nav-item"><RouterLink to="/contacts" class="nav-link">Kontakt</RouterLink></li>
         </ul>
       </div>
     </nav>
