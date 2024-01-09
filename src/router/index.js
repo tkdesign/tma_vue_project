@@ -3,7 +3,6 @@ import HomeView from '@/views/HomeView.vue';
 import ProjectsView from '@/views/ProjectsView.vue';
 import PricesView from '@/views/PricesView.vue';
 import ContactsView from '@/views/ContactsView.vue';
-import {useProjectsStore} from "@/stores/projectsStore";
 
 const routes = [
     {path: '/', component: HomeView, meta: {title: 'Domov'}},
