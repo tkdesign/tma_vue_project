@@ -11,7 +11,7 @@
     <h5 class="card-title text-muted">{{ project.title }}</h5>
     <p class="card-text text-muted">{{ project.intro_text }}</p>
   </div>
-  <LightBoxForProjectGallery ref="lightBoxModalWindow"/>
+  <LightBoxForProjectGallery ref="lightBoxModalWindow" @hiddenLightBox="handleModalClose"/>
 </template>
 <script>
 import {ref} from "vue";
@@ -30,7 +30,8 @@ export default {
     showLightBox(title, image) {
       this.$refs.lightBoxModalWindow.title = title;
       this.$refs.lightBoxModalWindow.image = image;
-      let modal = ref(null);
+      this.$refs.lightBoxModalWindow.showLightBox();
+      /*let modal = ref(null);
       const modalElement = document.getElementById('LightBox');
       if (modalElement) {
         modal.value = new Modal(modalElement, {
@@ -42,7 +43,7 @@ export default {
           modal.value._element.addEventListener('hidden.bs.modal', this.handleModalClose);
           modal.value.show();
         }
-      }
+      }*/
     },
     handleModalClose() {
       this.$refs.lightBoxModalWindow.title = '';

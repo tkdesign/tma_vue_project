@@ -2,39 +2,29 @@
   <div class="site-wrapper w-100 h-100">
     <div class="site-wrapper-inner w-100 h-100 m-0 p-0">
       <MainHeader/>
-      <div id="presentationCarousel" class="carousel carousel-dark slide carousel-fade w-100 h-100"
-           data-bs-ride="carousel">
-        <div class="carousel-inner h-100">
-          <div class="carousel-item active w-100 h-100">
+      <BCarousel controls class="w-100 h-100" fade>
+        <BCarouselSlide class="w-100 h-100">
+          <template #img>
             <div class="w-100 h-100 slide-item" style="background-image: url('/img/covers/covertrub2.jpg');">
             </div>
-            <h1 class="carousel-item-text py-3 px-5"><strong>Ateliér TM Architektúra. Project 1</strong>
-            </h1>
-          </div>
-          <div class="carousel-item w-100 h-100">
+          </template>
+          <h1 class="carousel-item-text py-3 px-5"><strong>Ateliér TM Architektúra. Project 1</strong></h1>
+        </BCarouselSlide>
+        <BCarouselSlide class="w-100 h-100">
+          <template #img>
             <div class="w-100 h-100 slide-item" style="background-image: url('/img/covers/covertrub3.jpg');">
             </div>
-            <h1 class="carousel-item-text py-3 px-5"><strong>Ateliér TM Architektúra. Project 2</strong>
-            </h1>
-          </div>
-          <div class="carousel-item w-100 h-100">
+          </template>
+          <h1 class="carousel-item-text py-3 px-5"><strong>Ateliér TM Architektúra. Project 2</strong></h1>
+        </BCarouselSlide>
+        <BCarouselSlide class="w-100 h-100">
+          <template #img>
             <div class="w-100 h-100 slide-item" style="background-image: url('/img/covers/covertrub4.jpg');">
             </div>
-            <h1 class="carousel-item-text py-3 px-5"><strong>Ateliér TM Architektúra. Project 3</strong>
-            </h1>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#presentationCarousel"
-                data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Predchádzajúci</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#presentationCarousel"
-                data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Nasledujúci</span>
-        </button>
-      </div>
+          </template>
+          <h1 class="carousel-item-text py-3 px-5"><strong>Ateliér TM Architektúra. Project 3</strong></h1>
+        </BCarouselSlide>
+      </BCarousel>
     </div>
   </div>
 </template>
@@ -93,5 +83,16 @@ a:hover {
 
 .carousel-inner {
   height: 100%;
+}
+
+.carousel-caption {
+  position: absolute;
+  left: 0 !important;
+  right: unset !important;
+  bottom: 0 !important;
+  padding: 0 !important;
+  color: unset !important;
+  width: 100%;
+  text-align: unset !important;
 }
 </style>

@@ -10,40 +10,29 @@
       <ul>
         <li v-for="(group, index) in priceGroups" :key="index">{{ group.title }}</li>
       </ul>
-      <div class="accordion accordion-flush" id="pricesAccordion">
-        <div class="accordion-item" v-for="(group, index) in priceGroups" :key="index">
-          <h2 class="accordion-header" :id="'heading' + index">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                    :data-bs-target="'#collapse' + index" aria-expanded="true" :aria-controls="'collapse' + index"
-                    @click="setActiveTab(index)">
-              {{ group.title }}
-            </button>
-          </h2>
-          <div :id="'collapse' + index" :class="['accordion-collapse', 'collapse', { 'show': index === activeTab }]"
-               :aria-labelledby="'heading' + index" data-bs-parent="#pricesAccordion">
-            <div class="accordion-body">
-              {{ group.desc }}
-              <table class="table">
-                <tbody>
-                <tr class="table-light">
-                  <th>OBSAH PRÁCE</th>
-                  <th>CENA</th>
-                  <th>DOBA DODANIA</th>
-                  <th>INFO</th>
-                </tr>
-                <tr v-for="(price, idx) in group.prices" :key="idx">
-                  <td><strong>{{ price.title }}</strong></td>
-                  <td>{{ price.price }}</td>
-                  <td>{{ price.duration }}</td>
-                  <td>{{ price.desc }}</td>
-                </tr>
-                </tbody>
-              </table>
-              <p class="text-muted">*Ceny neobsahujú dph.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <BAccordion flush>
+        <BAccordionItem v-for="(group, index) in priceGroups" :key="index" :title="group.title"
+                        @shown="setActiveTab(index)" :visible="index === activeTab">
+          {{ group.desc }}
+          <table class="table">
+            <tbody>
+            <tr class="table-light">
+              <th>OBSAH PRÁCE</th>
+              <th>CENA</th>
+              <th>DOBA DODANIA</th>
+              <th>INFO</th>
+            </tr>
+            <tr v-for="(price, idx) in group.prices" :key="idx">
+              <td><strong>{{ price.title }}</strong></td>
+              <td>{{ price.price }}</td>
+              <td>{{ price.duration }}</td>
+              <td> {{ price.desc }}</td>
+            </tr>
+            </tbody>
+          </table>
+          <p class="text-muted">*Ceny neobsahujú dph.</p>
+        </BAccordionItem>
+      </BAccordion>
     </section>
   </main>
   <SecondaryFooter :currentPage="'/prices'"/>
@@ -51,7 +40,6 @@
 <script>
 import SecondaryHeader from '@/components/SecondaryHeader.vue';
 import SecondaryFooter from '@/components/SecondaryFooter.vue';
-import axios from 'axios';
 import {usePriceGroupsStore} from "@/stores/priceGroupsStore.js";
 
 export default {
@@ -59,18 +47,12 @@ export default {
     const priceGroupsStorage = usePriceGroupsStore();
     return {
       priceGroupsStorage,
-      dataLoaded: false,
-      priceGroups: [],
     };
   },
   created() {
-    axios.get('/prices.json').then(response => {
-      this.priceGroups = response.data.priceGroups;
-      this.dataLoaded = true;
-
-    }).catch(error => {
-      console.error('Nie je možné načítať údaje.', error);
-    });
+    if (this.priceGroupsStorage.getPriceGroups.length === 0) {
+      this.priceGroupsStorage.init();
+    }
   },
   components: {
     SecondaryHeader,
@@ -78,8 +60,15 @@ export default {
   },
   computed: {
     activeTab() {
-      return this.priceGroupsStorage.activeGroup || 0;
+      return this.priceGroupsStorage.getActiveGroup || 0;
     },
+    priceGroups() {
+      return this.priceGroupsStorage.getPriceGroups;
+    },
+  },
+  beforeUpdate() {
+    console.log(`beforeUpdate this.priceGroupsStorage.activeGroup: ${this.priceGroupsStorage.getActiveGroup}`);
+    console.log(`beforeUpdate this.priceGroupsStorage.priceGroups: ${this.priceGroupsStorage.getPriceGroups}`);
   },
   methods: {
     setActiveTab(index) {

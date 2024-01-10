@@ -1,19 +1,7 @@
 <template>
-  <div class="modal" id="LightBox">
-    <div class="modal-dialog modal-fullscreen">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5">{{ title }}</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="container-fluid"><img :src="'/img/details/' + image" :alt="title"/></div>
-        </div>
-        <div class="modal-footer">
-        </div>
-      </div>
-    </div>
-  </div>
+  <BModal :title="title" fullscreen lazy ref="lightbox" @hidden="hiddenLightBox" id="LightBox" hideFooter noFade>
+  <div class="container-fluid"><img :src="'/img/details/' + image" :alt="title"/></div>
+  </BModal>
 </template>
 <script>
 export default {
@@ -22,6 +10,14 @@ export default {
       title: "",
       image: "",
     }
+  },
+  methods: {
+    hiddenLightBox(title, image) {
+      this.$emit('hiddenLightBox');
+    },
+    showLightBox() {
+      this.$refs.lightbox.show();
+    },
   },
 }
 </script>

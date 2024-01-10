@@ -40,29 +40,21 @@
       </form>
     </section>
   </main>
-  <div class="modal" id="GDPRModalWnd">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5">Vážime si vaše súkromie</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p>Vaše meno a e-mail použijeme len na naše interné účely.</p>
-          <p>Na komunikáciu s vami budeme používať váš e-mail. Súhlas s vyššie uvedeným spracúvaním zo
-            strany našej spoločnosti môžete poskytnúť kliknutím na príslušné tlačidlo.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-link-secondary" data-bs-dismiss="modal"
-                  id="noBtn" @click.prevent="GDPROff">Nesúhlasím
-          </button>
-          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal"
-                  id="yesBtn" @click.prevent="GDPROn">Súhlasím
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
+  <BModal title="Vážime si vaše súkromie" ref="gdpr_modal" id="GDPRModalWnd" noFade>
+    <p>Vaše meno a e-mail použijeme len na naše interné účely.</p>
+    <p>Na komunikáciu s vami budeme používať váš e-mail. Súhlas s vyššie uvedeným spracúvaním zo
+      strany našej spoločnosti môžete poskytnúť kliknutím na príslušné tlačidlo.</p>
+    <template #cancel>
+      <button type="button" class="btn btn-link-secondary" data-bs-dismiss="modal"
+              id="noBtn" @click.prevent="GDPROff">Nesúhlasím
+      </button>
+    </template>
+    <template #ok>
+      <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal"
+              id="yesBtn" @click.prevent="GDPROn">Súhlasím
+      </button>
+    </template>
+  </BModal>
   <SecondaryFooter :currentPage="'/contacts'"/>
 </template>
 <script>
