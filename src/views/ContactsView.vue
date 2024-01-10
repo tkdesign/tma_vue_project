@@ -24,7 +24,7 @@
         <br>
         <label for="phone" class="form-label">Telefónne číslo</label>
         <input v-model="formData.phone" type="tel" id="phone" placeholder="Telefónne číslo" class="form-control"
-               name="phone" required/>
+               name="phone"/>
         <br>
         <label for="subject" class="form-label">Predmet</label>
         <select v-model="formData.subject" id="subject" class="form-select" name="subject" required>
@@ -34,10 +34,11 @@
         <textarea v-model="formData.message" id="question" placeholder="Správa" class="form-control" name="request"
                   required></textarea>
         <input type="checkbox" id="check" class="form-check-input me-2" :checked="GDPRChecked" required><label
-          for="check" class="form-label">Súhlasím <a class="link-secondary" href="#GDPRModalWnd" data-bs-toggle="modal">so
+          for="check" class="form-label">Súhlasím <a class="link-secondary" href="#" @click.prevent="showGDPRModal"
+                                                     data-bs-toggle="modal">so
         spracovaním osobných údajov</a></label>
         <br>
-        <button type="submit" class="btn btn-outline-secondary mt-4" @click.prevent="beforeSendQuestion">Odoslať
+        <button type="submit" class="btn btn-outline-secondary mt-4 pe-auto" @click.prevent="beforeSendQuestion">Odoslať
         </button>
       </form>
     </section>
@@ -48,12 +49,12 @@
       strany našej spoločnosti môžete poskytnúť kliknutím na príslušné tlačidlo.</p>
     <template #cancel>
       <button type="button" class="btn btn-link-secondary" data-bs-dismiss="modal"
-              id="noBtn" @click.prevent="GDPROff">Nesúhlasím
+              id="noBtn" @click="GDPROff">Nesúhlasím
       </button>
     </template>
     <template #ok>
       <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal"
-              id="yesBtn" @click.prevent="GDPROn">Súhlasím
+              id="yesBtn" @click="GDPROn">Súhlasím
       </button>
     </template>
   </BModal>
@@ -109,11 +110,16 @@ export default {
         alert('Formulár nie je správne vyplnený!');
       }
     },
+    showGDPRModal() {
+      this.$refs.gdpr_modal.show();
+    },
     GDPROn() {
       this.GDPRChecked = true;
+      this.$refs.gdpr_modal.hide();
     },
     GDPROff() {
       this.GDPRChecked = false;
+      this.$refs.gdpr_modal.hide();
     },
   },
 };
