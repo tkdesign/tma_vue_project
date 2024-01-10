@@ -1,6 +1,6 @@
 {
   "priceGroups": [
-    {"id": 1, "title": "Architectural Services", "desc": "Description for Architectural Services", "prices": [
+    {"id": 1, "title": "Architektúra", "desc": "Ponúkame komplexný prístup k architektonickému návrhu budov a stavieb.", "prices": [
       {"title": "Architektonická štúdia", "price": "20€/m²", "duration": "8 týždňov", "desc": "Pre začiatok projekčných prác je potrebné priestor zamerať"},
       {"title": "Projekty pre územné rozhodnutie a stavebné povolenie", "price": "od 40€/m²", "duration": "8 týždňov", "desc": "Cena platí pre priestory od 100m²"},
       {"title": "Realizačný projekt", "price": "od 70€/m²", "duration": "16 týždňov", "desc": "Cena platí pre priestory od 100m²"},

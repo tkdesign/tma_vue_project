@@ -12,7 +12,8 @@
     <hr/>
     <section class="p-5">
       <h2>Kontaktný formulár</h2>
-      <form method="post" action="/confirmation" class="col-md-6 needs-validation" ref="myForm">
+      <form method="post" action="/confirmation"
+            :class="['col-md-6','needs-validation', {'was-validated': wasValidated}]" ref="myForm">
         <label for="name" class="form-label">Meno a priezvisko</label>
         <input v-model="formData.name" type="text" id="name" placeholder="Meno a priezvisko" class="form-control"
                name="name" required>
@@ -30,7 +31,8 @@
           <option v-for="option in subjectOptions" :key="option.value" :value="option.value">{{ option.text }}</option>
         </select>
         <label for="question" class="form-label">Správa</label>
-        <textarea id="question" placeholder="Správa" class="form-control" name="request" required></textarea>
+        <textarea v-model="formData.message" id="question" placeholder="Správa" class="form-control" name="request"
+                  required></textarea>
         <input type="checkbox" id="check" class="form-check-input me-2" :checked="GDPRChecked" required><label
           for="check" class="form-label">Súhlasím <a class="link-secondary" href="#GDPRModalWnd" data-bs-toggle="modal">so
         spracovaním osobných údajov</a></label>
@@ -85,15 +87,22 @@ export default {
       ],
       isFormValidated: false,
       GDPRChecked: false,
+      wasValidated: false
     };
+  },
+  computed: {
+    queryString() {
+      return `name=${encodeURIComponent(this.formData.name)}&email=${encodeURIComponent(this.formData.email)}&phone=${encodeURIComponent(this.formData.phone)}&subject=${encodeURIComponent(this.formData.subject)}&message=${encodeURIComponent(this.formData.message)}`;
+    }
   },
   methods: {
     beforeSendQuestion(event) {
       this.isFormValidated = true;
       const isValid = this.$refs.myForm.checkValidity();
-      this.$refs.myForm.classList.add('was-validated');
+      this.wasValidated = true;
       if (isValid) {
-        alert(JSON.stringify(this.formData));
+        // alert(JSON.stringify(this.formData));
+        this.$router.push(`/confirmation?${this.queryString}`);
       } else {
         event.stopPropagation();
         event.preventDefault();

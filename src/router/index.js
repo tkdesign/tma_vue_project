@@ -3,6 +3,7 @@ import HomeView from '@/views/HomeView.vue';
 import ProjectsView from '@/views/ProjectsView.vue';
 import PricesView from '@/views/PricesView.vue';
 import ContactsView from '@/views/ContactsView.vue';
+import ConfirmationView from "@/views/ConfirmationView.vue";
 
 const routes = [
     {path: '/', component: HomeView, meta: {title: 'Domov'}},
@@ -10,6 +11,7 @@ const routes = [
     {path: '/projects/:categoryId', component: ProjectsView, props: true, meta: {title: 'Projekty'}},
     {path: '/prices', component: PricesView, meta: {title: 'Cenník'}},
     {path: '/contacts', component: ContactsView, meta: {title: 'Kontakt'}},
+    {path: '/confirmation', component: ConfirmationView, meta: {title: 'Potvrdenie'}},
 ];
 
 const router = createRouter({
