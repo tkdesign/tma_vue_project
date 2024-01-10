@@ -14,8 +14,6 @@
   <LightBoxForProjectGallery ref="lightBoxModalWindow" @hiddenLightBox="handleModalClose"/>
 </template>
 <script>
-import {ref} from "vue";
-import {Modal} from "bootstrap";
 import LightBoxForProjectGallery from "@/components/LightBoxForProjectGallery.vue";
 
 export default {
@@ -31,19 +29,6 @@ export default {
       this.$refs.lightBoxModalWindow.title = title;
       this.$refs.lightBoxModalWindow.image = image;
       this.$refs.lightBoxModalWindow.showLightBox();
-      /*let modal = ref(null);
-      const modalElement = document.getElementById('LightBox');
-      if (modalElement) {
-        modal.value = new Modal(modalElement, {
-          keyboard: true,
-          backdrop: true,
-          focus: true,
-        });
-        if (modal.value) {
-          modal.value._element.addEventListener('hidden.bs.modal', this.handleModalClose);
-          modal.value.show();
-        }
-      }*/
     },
     handleModalClose() {
       this.$refs.lightBoxModalWindow.title = '';

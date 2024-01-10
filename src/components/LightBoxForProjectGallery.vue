@@ -1,6 +1,6 @@
 <template>
   <BModal :title="title" fullscreen lazy ref="lightbox" @hidden="hiddenLightBox" id="LightBox" hideFooter noFade>
-  <div class="container-fluid"><img :src="'/img/details/' + image" :alt="title"/></div>
+    <div class="container-fluid"><img :src="'/img/details/' + image" :alt="title"/></div>
   </BModal>
 </template>
 <script>
@@ -12,7 +12,7 @@ export default {
     }
   },
   methods: {
-    hiddenLightBox(title, image) {
+    hiddenLightBox() {
       this.$emit('hiddenLightBox');
     },
     showLightBox() {
