@@ -22,6 +22,7 @@
 <script>
 import SecondaryHeader from "@/components/SecondaryHeader.vue";
 import SecondaryFooter from "@/components/SecondaryFooter.vue";
+import {useSubjectsStore} from "@/stores/subjectsStore.js";
 
 export default {
   components: {SecondaryFooter, SecondaryHeader},
@@ -35,7 +36,7 @@ export default {
       name: this.$route.query.name,
       email: this.$route.query.email,
       phone: this.$route.query.phone,
-      subject: this.$route.query.subject,
+      subject: useSubjectsStore().mapSubjectText(this.$route.query.subject),
       message: this.$route.query.message,
     };
   },

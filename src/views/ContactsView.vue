@@ -63,6 +63,7 @@
 <script>
 import SecondaryHeader from '@/components/SecondaryHeader.vue';
 import SecondaryFooter from '@/components/SecondaryFooter.vue';
+import {useSubjectsStore} from "@/stores/subjectsStore.js";
 
 export default {
   components: {
@@ -78,14 +79,7 @@ export default {
         subject: null,
         message: '',
       },
-      subjectOptions: [
-        {value: null, text: 'Výber predmetu'},
-        {value: 1, text: 'Architektonické služby'},
-        {value: 2, text: 'Interiérové služby'},
-        {value: 3, text: 'Vizuálizácia'},
-        {value: 4, text: '3D modelovanie'},
-        {value: 5, text: 'Iné'},
-      ],
+      subjectOptions: useSubjectsStore().getSubjectOptions,
       isFormValidated: false,
       GDPRChecked: false,
       wasValidated: false

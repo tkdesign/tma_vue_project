@@ -7,7 +7,7 @@
     </section>
     <section class="p-5">
       <div class="d-inline-block">
-        <select @change="changeCategory" class="form-select" ref="categorySelector">
+        <select @change="changeCategory" class="form-select" ref="categorySelector" name="category">
           <option value="">Všetky projekty</option>
           <option v-for="category in projectsStore.categories" :key="category.id" :value="category.id"
                   :selected="category.id === categoryId">{{ category.title }}
