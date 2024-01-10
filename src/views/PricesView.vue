@@ -66,10 +66,6 @@ export default {
       return this.priceGroupsStorage.getPriceGroups;
     },
   },
-  beforeUpdate() {
-    console.log(`beforeUpdate this.priceGroupsStorage.activeGroup: ${this.priceGroupsStorage.getActiveGroup}`);
-    console.log(`beforeUpdate this.priceGroupsStorage.priceGroups: ${this.priceGroupsStorage.getPriceGroups}`);
-  },
   methods: {
     setActiveTab(index) {
       this.priceGroupsStorage.setActiveGroup(index);
