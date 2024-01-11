@@ -28,16 +28,13 @@ export default {
   components: {SecondaryFooter, SecondaryHeader},
   data() {
     return {
-      confirmationData: null,
-    };
-  },
-  created() {
-    this.confirmationData = {
-      name: this.$route.query.name,
-      email: this.$route.query.email,
-      phone: this.$route.query.phone,
-      subject: useSubjectsStore().mapSubjectText(this.$route.query.subject),
-      message: this.$route.query.message,
+      confirmationData: {
+        name: this.$route.query.name,
+        email: this.$route.query.email,
+        phone: this.$route.query.phone,
+        subject: useSubjectsStore().mapSubjectText(this.$route.query.subject),
+        message: this.$route.query.message,
+      },
     };
   },
 };

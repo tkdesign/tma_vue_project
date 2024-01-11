@@ -85,19 +85,13 @@ export default {
       wasValidated: false
     };
   },
-  computed: {
-    queryString() {
-      return `name=${encodeURIComponent(this.formData.name)}&email=${encodeURIComponent(this.formData.email)}&phone=${encodeURIComponent(this.formData.phone)}&subject=${encodeURIComponent(this.formData.subject)}&message=${encodeURIComponent(this.formData.message)}`;
-    }
-  },
   methods: {
     beforeSendQuestion(event) {
       this.isFormValidated = true;
       const isValid = this.$refs.myForm.checkValidity();
       this.wasValidated = true;
       if (isValid) {
-        // alert(JSON.stringify(this.formData));
-        this.$router.push(`/confirmation?${this.queryString}`);
+        this.$router.push(`/confirmation?name=${encodeURIComponent(this.formData.name)}&email=${encodeURIComponent(this.formData.email)}&phone=${encodeURIComponent(this.formData.phone)}&subject=${encodeURIComponent(this.formData.subject)}&message=${encodeURIComponent(this.formData.message)}`);
       } else {
         event.stopPropagation();
         event.preventDefault();
