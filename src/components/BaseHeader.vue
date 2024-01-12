@@ -1,22 +1,16 @@
 <template>
   <header class="navbar navbar-expand-lg bg-light sticky-top">
     <nav class="container flex-wrap py-3 px-5">
-      <RouterLink to="/" class="navbar-brand mb-0">TM Architektura</RouterLink>
-      <button class="navbar-toggler btn-lg" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navbarCollapseContainer" aria-controls="navbarCollapseContainer" aria-expanded="false"
-              aria-label="Toggle menu"><span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarCollapseContainer">
-        <ul class="navbar-nav">
-          <li class="nav-item"><RouterLink to="/" class="nav-link">Domov</RouterLink></li>
-          <li class="nav-item"><RouterLink :class="['nav-link', { 'active': isActive('/projects') }]"
-                                  to="/projects">Projekty</RouterLink></li>
-          <li class="nav-item"><RouterLink :class="['nav-link', { 'active': isActive('/prices') }]" to="/prices">Cenník</RouterLink>
-          </li>
-          <li class="nav-item"><RouterLink :class="['nav-link', { 'active': isActive('/contacts') }]"
-                                  to="/contacts">Kontakt</RouterLink></li>
-        </ul>
-      </div>
+      <BNavbarBrand to="/" class="mb-0">TM Architektura</BNavbarBrand>
+      <BNavbarToggle target="nav-collapse" class="btn-sm" />
+      <BCollapse id="nav-collapse" class="justify-content-end" is-nav>
+        <BNavbarNav right>
+          <BNavItem to="/">Domov</BNavItem>
+          <BNavItem to="/projects" :active="isActive('/projects')">Projekty</BNavItem>
+          <BNavItem to="/prices" :active="isActive('/prices')">Cenník</BNavItem>
+          <BNavItem to="/contacts" :active="isActive('/contacts')">Kontakt</BNavItem>
+        </BNavbarNav>
+      </BCollapse>
     </nav>
   </header>
 </template>
