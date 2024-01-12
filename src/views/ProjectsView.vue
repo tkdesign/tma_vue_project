@@ -32,16 +32,27 @@ import BaseFooter from "@/components/BaseFooter.vue";
 import {useProjectsStore} from "@/stores/projectsStore";
 
 export default {
+  components: {
+    BaseHeader,
+    ProjectsViewGallery,
+    BaseFooter,
+  },
+  props: {
+    categoryId: {
+      type: String,
+      default: null,
+    },
+  },
   data() {
     const projectsStore = useProjectsStore();
     return {
       projectsStore,
     };
   },
-  props: {
-    categoryId: {
-      type: String,
-      default: null,
+  computed: {
+    filteredProjects() {
+      const categoryId = this.categoryId;
+      return categoryId ? this.projectsStore.getProjectsByCategory(categoryId) : this.projectsStore.projects;
     },
   },
   watch: {
@@ -52,12 +63,6 @@ export default {
         this.$refs.categorySelector.value = '';
       }
     }
-  },
-  computed: {
-    filteredProjects() {
-      const categoryId = this.categoryId;
-      return categoryId ? this.projectsStore.getProjectsByCategory(categoryId) : this.projectsStore.projects;
-    },
   },
   created() {
     if (this.projectsStore.projects.length === 0) {
@@ -95,11 +100,6 @@ export default {
         this.$router.push({path: '/projects'});
       }
     },
-  },
-  components: {
-    BaseHeader,
-    ProjectsViewGallery,
-    BaseFooter,
   },
 }
 </script>

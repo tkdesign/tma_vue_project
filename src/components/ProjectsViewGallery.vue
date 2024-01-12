@@ -17,6 +17,9 @@
 import ProjectsViewGalleryLightbox from "@/components/ProjectsViewGalleryLightbox.vue";
 
 export default {
+  components: {
+    ProjectsViewGalleryLightbox,
+  },
   props: {
     projects: {
       type: Array,
@@ -34,9 +37,6 @@ export default {
       this.$refs.lightBoxModalWindow.title = '';
       this.$refs.lightBoxModalWindow.image = '';
     },
-  },
-  components: {
-    ProjectsViewGalleryLightbox,
   },
 }
 </script>

@@ -43,20 +43,15 @@ import BaseFooter from '@/components/BaseFooter.vue';
 import {usePriceGroupsStore} from "@/stores/priceGroupsStore.js";
 
 export default {
+  components: {
+    BaseHeader: BaseHeader,
+    BaseFooter: BaseFooter,
+  },
   data() {
     const priceGroupsStorage = usePriceGroupsStore();
     return {
       priceGroupsStorage,
     };
-  },
-  created() {
-    if (this.priceGroupsStorage.getPriceGroups.length === 0) {
-      this.priceGroupsStorage.init();
-    }
-  },
-  components: {
-    BaseHeader: BaseHeader,
-    BaseFooter: BaseFooter,
   },
   computed: {
     activeTab() {
@@ -65,6 +60,11 @@ export default {
     priceGroups() {
       return this.priceGroupsStorage.getPriceGroups;
     },
+  },
+  created() {
+    if (this.priceGroupsStorage.getPriceGroups.length === 0) {
+      this.priceGroupsStorage.init();
+    }
   },
   methods: {
     setActiveTab(index) {
