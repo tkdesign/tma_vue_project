@@ -68,6 +68,50 @@ a:hover {
   top: 0;
 }
 
+.navbar-top-home {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-brand-home {
+  color: rgba(0, 0, 0, .9) !important;
+  font-size: 1.75rem !important;
+  font-weight: 400 !important;
+}
+
+.navbar-toggler-home {
+  color: rgba(0, 0, 0, .9) !important;
+  border-color: rgba(0, 0, 0, .9) !important;
+}
+
+.nav-item-home .nav-link {
+  padding: .25rem 0;
+  font-weight: 700;
+  background-color: transparent;
+  border-bottom: .25rem solid transparent;
+  color: rgba(0, 0, 0, .6) !important;
+}
+
+.nav-item-home .nav-link:hover,
+.nav-item-home .nav-link:focus {
+  border-bottom-color: rgba(0, 0, 0, .6) !important;
+}
+
+.nav-item-home .nav-link + .nav-link {
+  margin-left: 1rem;
+}
+
+.nav-item-home .nav-link.active {
+  text-shadow: none !important;
+  color: rgba(0, 0, 0, .9) !important;
+  border-bottom-color: rgba(0, 0, 0, .9);
+}
+
 .carousel-item-text {
   position: absolute;
   bottom: 0;
