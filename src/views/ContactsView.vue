@@ -33,7 +33,7 @@
         <label for="question" class="form-label">Správa</label>
         <textarea v-model="formData.message" id="question" placeholder="Správa" class="form-control" name="request"
                   required></textarea>
-        <input type="checkbox" id="check" class="form-check-input me-2" :checked="GDPRChecked" required><label
+        <input type="checkbox" id="check" class="form-check-input me-2" v-model="GDPRChecked" required><label
           for="check" class="form-label">Súhlasím <a class="link-secondary" href="#" @click.prevent="showGDPRModal"
                                                      data-bs-toggle="modal">so
         spracovaním osobných údajov</a></label>
