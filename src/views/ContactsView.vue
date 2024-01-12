@@ -1,5 +1,5 @@
 <template>
-  <SecondaryHeader :currentPage="'/contacts'"/>
+  <BaseHeader :currentPage="'/contacts'"/>
   <main class="container">
     <section class="p-5">
       <h1>Kontaktné a fakturačné údaje</h1>
@@ -28,7 +28,7 @@
         <br>
         <label for="subject" class="form-label">Predmet</label>
         <select v-model="formData.subject" id="subject" class="form-select" name="subject" required>
-          <option v-for="option in subjectOptions" :key="option.value" :value="option.value">{{ option.text }}</option>
+          <option v-for="option in subjectOptions" :key="option.value" :value="option.value" :disabled="option.value === null">{{ option.text }}</option>
         </select>
         <label for="question" class="form-label">Správa</label>
         <textarea v-model="formData.message" id="question" placeholder="Správa" class="form-control" name="request"
@@ -58,17 +58,17 @@
       </button>
     </template>
   </BModal>
-  <SecondaryFooter :currentPage="'/contacts'"/>
+  <BaseFooter :currentPage="'/contacts'"/>
 </template>
 <script>
-import SecondaryHeader from '@/components/SecondaryHeader.vue';
-import SecondaryFooter from '@/components/SecondaryFooter.vue';
+import BaseHeader from '@/components/BaseHeader.vue';
+import BaseFooter from '@/components/BaseFooter.vue';
 import {useSubjectsStore} from "@/stores/subjectsStore.js";
 
 export default {
   components: {
-    SecondaryHeader,
-    SecondaryFooter,
+    BaseHeader,
+    BaseFooter,
   },
   data() {
     return {

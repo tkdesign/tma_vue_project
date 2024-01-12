@@ -11,10 +11,10 @@
     <h5 class="card-title text-muted">{{ project.title }}</h5>
     <p class="card-text text-muted">{{ project.intro_text }}</p>
   </div>
-  <LightBoxForProjectGallery ref="lightBoxModalWindow" @hiddenLightBox="handleModalClose"/>
+  <ProjectsViewGalleryLightbox ref="lightBoxModalWindow" @hiddenLightBox="handleModalClose"/>
 </template>
 <script>
-import LightBoxForProjectGallery from "@/components/LightBoxForProjectGallery.vue";
+import ProjectsViewGalleryLightbox from "@/components/ProjectsViewGalleryLightbox.vue";
 
 export default {
   props: {
@@ -36,7 +36,7 @@ export default {
     },
   },
   components: {
-    LightBoxForProjectGallery,
+    ProjectsViewGalleryLightbox,
   },
 }
 </script>

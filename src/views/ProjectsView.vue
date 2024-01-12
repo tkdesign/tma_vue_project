@@ -1,5 +1,5 @@
 <template>
-  <SecondaryHeader :currentPage="'/projects'"/>
+  <BaseHeader :currentPage="'/projects'"/>
   <main class="container">
     <section class="p-5">
       <h1 id="pagetitle">Projekty</h1>
@@ -18,17 +18,17 @@
     <section class="p-5">
       <div class="container-fluid" id="cardsContainer">
         <div class="row">
-          <ProjectsGallery :projects="filteredProjects"/>
+          <ProjectsViewGallery :projects="filteredProjects"/>
         </div>
       </div>
     </section>
   </main>
-  <SecondaryFooter :currentPage="'/projects'"/>
+  <BaseFooter :currentPage="'/projects'"/>
 </template>
 <script>
-import SecondaryHeader from '@/components/SecondaryHeader.vue'
-import ProjectsGallery from '@/components/ProjectsGallery.vue';
-import SecondaryFooter from "@/components/SecondaryFooter.vue";
+import BaseHeader from '@/components/BaseHeader.vue'
+import ProjectsViewGallery from '@/components/ProjectsViewGallery.vue';
+import BaseFooter from "@/components/BaseFooter.vue";
 import {useProjectsStore} from "@/stores/projectsStore";
 
 export default {
@@ -97,9 +97,9 @@ export default {
     },
   },
   components: {
-    SecondaryHeader,
-    ProjectsGallery,
-    SecondaryFooter,
+    BaseHeader,
+    ProjectsViewGallery,
+    BaseFooter,
   },
 }
 </script>

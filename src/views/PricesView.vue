@@ -1,5 +1,5 @@
 <template>
-  <SecondaryHeader :currentPage="'/prices'"/>
+  <BaseHeader :currentPage="'/prices'"/>
   <main class="container">
     <section class="p-5">
       <h1>Cenník</h1>
@@ -35,11 +35,11 @@
       </BAccordion>
     </section>
   </main>
-  <SecondaryFooter :currentPage="'/prices'"/>
+  <BaseFooter :currentPage="'/prices'"/>
 </template>
 <script>
-import SecondaryHeader from '@/components/SecondaryHeader.vue';
-import SecondaryFooter from '@/components/SecondaryFooter.vue';
+import BaseHeader from '@/components/BaseHeader.vue';
+import BaseFooter from '@/components/BaseFooter.vue';
 import {usePriceGroupsStore} from "@/stores/priceGroupsStore.js";
 
 export default {
@@ -55,8 +55,8 @@ export default {
     }
   },
   components: {
-    SecondaryHeader,
-    SecondaryFooter,
+    BaseHeader: BaseHeader,
+    BaseFooter: BaseFooter,
   },
   computed: {
     activeTab() {

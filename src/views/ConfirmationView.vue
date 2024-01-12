@@ -1,5 +1,5 @@
 <template>
-  <SecondaryHeader :currentPage="'/confirmation'"/>
+  <BaseHeader :currentPage="'/confirmation'"/>
   <main class="container">
     <section class="p-5">
       <h1>Potvrdenie odoslania správy</h1>
@@ -17,15 +17,15 @@
       </div>
     </section>
   </main>
-  <SecondaryFooter :currentPage="'/confirmation'"/>
+  <BaseFooter :currentPage="'/confirmation'"/>
 </template>
 <script>
-import SecondaryHeader from "@/components/SecondaryHeader.vue";
-import SecondaryFooter from "@/components/SecondaryFooter.vue";
+import BaseHeader from "@/components/BaseHeader.vue";
+import BaseFooter from "@/components/BaseFooter.vue";
 import {useSubjectsStore} from "@/stores/subjectsStore.js";
 
 export default {
-  components: {SecondaryFooter, SecondaryHeader},
+  components: {BaseFooter, BaseHeader},
   data() {
     return {
       confirmationData: {

@@ -1,7 +1,7 @@
 <template>
   <div class="site-wrapper w-100 h-100">
     <div class="site-wrapper-inner w-100 h-100 m-0 p-0">
-      <MainHeader/>
+      <HomeViewHeader/>
       <BCarousel controls class="w-100 h-100" fade>
         <BCarouselSlide class="w-100 h-100">
           <template #img>
@@ -29,11 +29,11 @@
   </div>
 </template>
 <script>
-import MainHeader from '@/components/MainHeader.vue'
+import HomeViewHeader from '@/components/HomeViewHeader.vue'
 
 export default {
   components: {
-    MainHeader,
+    HomeViewHeader,
   },
 }
 </script>
